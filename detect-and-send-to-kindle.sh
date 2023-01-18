@@ -13,6 +13,6 @@ inotifywait -m -e create -e moved_to --format "%f" $TARGET \
 			if [[ $FILENAME == *.epub ]]
 			then
 				echo "epub file, emailing"
-				echo $FILENAME | mail -s "EBOOK" arihantchawla.becse17_GMat9r@kindle.com  -A $PROCESSED/"$FILENAME"
+				echo $FILENAME | mail -s "EBOOK" $1 -A $PROCESSED/"$FILENAME"  # pass email address of kindle as argument to the script
 			fi
                 done
